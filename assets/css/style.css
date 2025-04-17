@@ -23,7 +23,7 @@ body {
     font-family: var(--secondary-font);
     /*color: var(--highlight-color);
     background-color: var(--primary-color);*/
-    color:black;
+    /*color:black;*/
     background-color: red;
     display: flex;
     flex-direction: column;
@@ -32,6 +32,27 @@ body {
     min-width: 100%;
     margin: 0px;
 }
+p {
+    font-family: var(--primary-font);
+    color: purple;
+    width: 100%;
+    text-align: start;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.5em;
+    display: flex;
+}
+
+h1, h2, h3 {
+    color:darkgreen;
+    text-align: center;
+    margin: 2rem;
+}
+
 
 /*Navbar styling*/
 #navbar {
@@ -52,7 +73,9 @@ body {
     margin: 0;
     width: 100%;
 }
-
+.nav-active {
+    color: orange;
+}
 #navbar .logo {
     width: 50px;
 }
