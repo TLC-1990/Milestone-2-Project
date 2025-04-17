@@ -1,10 +1,10 @@
 /*Google Fonts import*/
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Grandstander:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Grandstander:wght@500&display=swap');
 
 /*Gereral styles*/
 :root {
     --primary-font:  "Grandstander", cursive;
-    --secondary-font: "Bungee Spice", sans-serif;
+    --secondary-font: "Bungee Shade", sans-serif;
     --primary-color: #345030;
     /*palm leaf*/
     --secondary-color: #120808;
@@ -21,12 +21,46 @@
 
 body {
     font-family: var(--secondary-font);
-    color: var(--highlight-color);
+    /*color: var(--highlight-color);
+    background-color: var(--primary-color);*/
+    color:black;
+    background-color: red;
     display: flex;
-    background-color: var(--primary-color);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-width: 100%;
     margin: 0px;
+}
+
+/*Navbar styling*/
+#navbar {
+    background-color: blue;
+    color: greenyellow;
+    font-family: (--secondary-font);
+    font-size: 30px;
+    align-items: end;
+    display: flex;
+    min-width: 100%;
+    top: 0;
+    margin: 0;
+}
+
+.nav-container {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin: 0;
+    width: 100%;
+}
+
+#navbar .logo {
+    width: 50px;
+}
+
+.nav-link {
+    font-size: 30px;
+}
+
+.container-fluid {
+    min-width: 100%;
 }
