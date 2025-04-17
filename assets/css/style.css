@@ -37,12 +37,10 @@ p {
     color: purple;
     width: 100%;
     text-align: start;
-    margin-top: 0px;
     margin-right: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding-left: 10px;
+    margin-left: 10px;
     padding-right: 10px;
+    padding-left: 10px;
     font-size: 1.5em;
     display: flex;
 }
@@ -53,6 +51,15 @@ h1, h2, h3 {
     margin: 2rem;
 }
 
+
+/* Game */
+
+.gameboard{
+    border-radius: 10px;
+    background: var(--primary-color);
+    padding: 20px;
+    margin: 10px;
+  }
 
 /*Navbar styling*/
 #navbar {
