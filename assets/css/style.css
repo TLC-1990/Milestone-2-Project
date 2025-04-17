@@ -54,12 +54,37 @@ h1, h2, h3 {
 
 /* Game */
 
+.card {
+    max-width: 350px;
+    max-height:350px;
+    background-image: url(https://images.pexels.com/photos/2757549/pexels-photo-2757549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-width:auto;
+    padding:10px;
+    margin:10px;
+}
+/*
 .gameboard{
     border-radius: 10px;
     background: var(--primary-color);
     padding: 20px;
     margin: 10px;
   }
+
+.cards, .card, .view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.cards{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-width:auto;
+  }*/
 
 /*Navbar styling*/
 #navbar {
