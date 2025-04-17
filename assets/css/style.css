@@ -1,0 +1,32 @@
+/*Google Fonts import*/
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Grandstander:wght@500&display=swap');
+
+/*Gereral styles*/
+:root {
+    --primary-font:  "Grandstander", cursive;
+    --secondary-font: "Bungee Spice", sans-serif;
+    --primary-color: #345030;
+    /*palm leaf*/
+    --secondary-color: #120808;
+    /* night rider */
+    --highlight-color: #FDE4A1;
+    /* peach crème brûlée */
+    --highlight-color-light: #ffffff;
+    /* white */
+    --highlight-color-headers: #DAF033;
+    /*lime fizz*/
+}
+
+/*Global styles*/
+
+body {
+    font-family: var(--secondary-font);
+    color: var(--highlight-color);
+    display: flex;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    margin: 0px;
+}
