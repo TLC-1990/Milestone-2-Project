@@ -54,7 +54,7 @@ h1, h2, h3 {
 
 /* Game */
 
-.card {
+#gameboard .card {
     max-width: 350px;
     max-height:350px;
     background-image: url(https://images.pexels.com/photos/2757549/pexels-photo-2757549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
@@ -66,6 +66,27 @@ h1, h2, h3 {
     min-width:auto;
     padding:10px;
     margin:10px;
+}
+
+/*Infomation page*/
+#information .card {
+    max-width: 350px;
+    max-height:350px;
+    background-color: var(--primary-color)!important;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-width:auto;
+    padding:10px;
+    margin:10px;
+}
+
+.card-text {
+    background-color: var(--primary-color);
+    text-wrap: wrap;
+    color: var(--highlight-color);
+    font-size: 10px;
 }
 /*
 .gameboard{
