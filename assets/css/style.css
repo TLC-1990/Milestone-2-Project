@@ -3,7 +3,7 @@
 
 /*Gereral styles*/
 :root {
-    --primary-font:  "Grandstander", cursive;
+    --primary-font: "Grandstander", cursive;
     --secondary-font: "Bungee Shade", sans-serif;
     --primary-color: #345030;
     /*palm leaf*/
@@ -32,6 +32,7 @@ body {
     min-width: 100%;
     margin: 0px;
 }
+
 p {
     font-family: var(--primary-font);
     color: purple;
@@ -41,46 +42,70 @@ p {
     margin-left: 10px;
     padding-right: 10px;
     padding-left: 10px;
-    font-size: 1.5em;
+    font-size: 1em;
     display: flex;
 }
 
-h1, h2, h3 {
-    color:darkgreen;
+h1,
+h2,
+h3 {
+    color: darkgreen;
     text-align: center;
     margin: 2rem;
 }
 
+/* Element styles*/
+.source-link {
+    font-size: 10px;
+}
+
+/*Start screen*/
+#startScreen {
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: var(--highlight-color);
+    color: #333;
+    font-family: var(--primary-font);
+    font-size: 10px;
+    text-align: center;
+    border: 8px solid;
+    border-radius: 10px;
+    box-shadow: 0 1px 32px var(--highlight-color-headers);
+}
 
 /* Game */
 
 #gameboard .card {
     max-width: 350px;
-    max-height:350px;
+    max-height: 350px;
     background-image: url(https://images.pexels.com/photos/2757549/pexels-photo-2757549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
     background-color: var(--primary-color);
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
-    min-width:auto;
-    padding:10px;
-    margin:10px;
+    min-width: auto;
+    padding: 10px;
+    margin: 10px;
+    border-color: #DAF033;
 }
 
-/*Infomation page*/
+/*
 #information .card {
     max-width: 350px;
-    max-height:350px;
-    background-color: var(--primary-color)!important;
+    max-height: 350px;
+    background-color: var(--primary-color) !important;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
-    min-width:auto;
-    padding:10px;
-    margin:10px;
-}
+    min-width: auto;
+    padding: 10px;
+    margin: 10px;
+}*/
 
 .card-text {
     background-color: var(--primary-color);
@@ -88,14 +113,16 @@ h1, h2, h3 {
     color: var(--highlight-color);
     font-size: 10px;
 }
-/*
-.gameboard{
-    border-radius: 10px;
-    background: var(--primary-color);
-    padding: 20px;
-    margin: 10px;
-  }
 
+#gameboard {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #345030;
+    border-color: #DAF033;
+    box-shadow: 10px 5px 5px var(--secondary-color);
+}
+
+/*
 .cards, .card, .view{
     display: flex;
     align-items: center;
@@ -126,9 +153,11 @@ h1, h2, h3 {
     margin: 0;
     width: 100%;
 }
+
 .nav-active {
     color: orange;
 }
+
 #navbar .logo {
     width: 50px;
 }
