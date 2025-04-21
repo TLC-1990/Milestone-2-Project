@@ -1,8 +1,8 @@
-function startPageMessage() {
-    var x = document.getElementById("gameboard");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
+document.getElementById("gameboard").style.display = "none";
+
+function startGame() {
+    document.getElementById("gameboard").style.display = "block";
+    document.getElementById("startScreen").style.display = "none";
 }
+
+document.getElementById('startBtn').addEventListener('click', startGame);
