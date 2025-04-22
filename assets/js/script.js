@@ -1,3 +1,4 @@
+/*Start Message*/
 document.getElementById("gameboard").style.display = "none";
 
 function startGame() {
