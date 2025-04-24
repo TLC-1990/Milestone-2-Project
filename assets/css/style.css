@@ -69,8 +69,8 @@ h6 {
     margin: auto;
     margin-top: 50px;
     position: relative;
-    max-width: 300px;
-    max-height: 250px;
+    max-width: 400px;
+    max-height: 350px;
     background-color: var(--highlight-color);
     color: #333;
     font-family: var(--primary-font);
@@ -84,12 +84,27 @@ h6 {
 
 
 /* Game */
+
+#countdown {
+    font-family: var(--secondary-font);
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 20px;
+    border: var(--secondary-color);
+    background-color: var(--highlight-color-headers);
+}
+
+#time {
+    font-size: 2em;
+}
+
 .game-container {
     display: grid;
     grid-template-columns: repeat(4, auto);
-    grid-gap: 10px;
-    margin: 10px;
+    grid-gap: 20px;
+    margin: 20px;
     justify-content: center;
+    align-items: center;
 }
 
 .view {
@@ -103,6 +118,8 @@ h6 {
     border-width: 2px;
     border-style: solid;
     flex-direction: row;
+    backface-visibility: hidden;
+    background-color: var(--highlight-color);
 }
 
 .game-card {
@@ -111,14 +128,21 @@ h6 {
 }
 
 .game-card .card-front img {
-    width: 50px;
+    width: 75px;
 }
 
 .cards .game-card {
     cursor: pointer;
     user-select: none;
     position: relative;
+    justify-content: space-between;
+    flex-shrink: inherit;
 }
+
+.card-front .card-back {
+    background-color: var(--highlight-color);
+}
+
 
 /*
 .cards .game-card .view {
@@ -143,18 +167,6 @@ h6 {
 }
 
 
-
-.card-front {
-    background-image: url(https://images.pexels.com/photos/2757549/pexels-photo-2757549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-    background-color: var(--highlight-color);
-}
-
-
-
-.card-back {
-    background-color: var(--highlight-color);
-}
-
 .game-card .card-back img {
     width: 50px;
     height: 50px;
@@ -178,6 +190,8 @@ h6 {
     padding: 10px;
     border-radius: 10px;
     background-color: #345030;
+    background-image: url(https://images.pexels.com/photos/2757549/pexels-photo-2757549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-color: var(--highlight-color);
     border-color: #DAF033;
     box-shadow: 10px 5px 5px var(--secondary-color);
 }
