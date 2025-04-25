@@ -10,7 +10,27 @@ document.getElementById('startBtn').addEventListener('click', startGame);
 
 
 /*Countdown Timer*/
-function startTimer() {
-    document.getElementById("time")
-    document.getElementById("timerStartBtn").addEventListener('click', startTimer)
+
+var seconds = 60;
+var time;
+
+function myFunction() {
+    if (seconds < 60) {
+        document.getElementById("time").innerHTML = seconds;
+    }
+    if (seconds > 0) {
+        seconds--;
+    } else {
+        clearInterval(time);
+        alert("Time's Up!");
+    }
 }
+document.getElementById("timerStartBtn").onclick = function () {
+    if (!time) {
+        time = window.setInterval(function () {
+            myFunction();
+        }, 1000);
+    }
+}
+
+document.getElementById("timer").innerHTML = "1:00";

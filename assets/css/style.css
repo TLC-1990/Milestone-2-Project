@@ -92,6 +92,9 @@ h6 {
     margin-top: 20px;
     border: var(--secondary-color);
     background-color: var(--highlight-color-headers);
+    max-width: 300px;
+    border-radius: 10px;
+    align-items: start;
 }
 
 #time {
