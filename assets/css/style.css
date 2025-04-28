@@ -46,12 +46,15 @@ p {
     display: flex;
 }
 
+h1 {
+    font-size: 2rem;
+}
+
 h1,
 h2,
 h3 {
     color: darkgreen;
     text-align: center;
-    margin: 2rem;
 }
 
 h6 {
@@ -95,6 +98,8 @@ h6 {
     max-width: 300px;
     border-radius: 10px;
     align-items: start;
+    padding: 10px;
+    border: solid var(--secondary-color);
 }
 
 #time {
@@ -103,11 +108,11 @@ h6 {
 
 .game-container {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+    row-gap: 10px;
     grid-gap: 20px;
-    margin: 20px;
     justify-content: center;
-    align-items: center;
+    align-content: center;
 }
 
 .view {
@@ -126,8 +131,8 @@ h6 {
 }
 
 .game-card {
-    height: 175px;
-    width: 125px;
+    height: 90px;
+    width: 60px;
 }
 
 .game-card .card-front img {
@@ -142,10 +147,17 @@ h6 {
     flex-shrink: inherit;
 }
 
+.cards {
+    padding: 10px;
+}
+
 .card-front .card-back {
     background-color: var(--highlight-color);
 }
 
+.hidden {
+    display: none;
+}
 
 /*
 .cards .game-card .view {

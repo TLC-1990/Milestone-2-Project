@@ -1,15 +1,15 @@
-/*Start Message*/
+/*Start Message
 document.getElementById("gameboard").style.display = "none";
 
 function startGame() {
     document.getElementById("gameboard").style.display = "block";
-    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("start-screen").style.display = "none";
 }
 
-document.getElementById('startBtn').addEventListener('click', startGame);
+document.getElementById('start-button').addEventListener('click', startGame);*/
 
 
-/*Countdown Timer*/
+/*Countdown Timer
 
 var seconds = 60;
 var time;
@@ -33,4 +33,4 @@ document.getElementById("timerStartBtn").onclick = function () {
     }
 }
 
-document.getElementById("timer").innerHTML = "1:00";
+document.getElementById("timer").innerHTML = "1:00";*/
