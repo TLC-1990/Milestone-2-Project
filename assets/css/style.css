@@ -42,7 +42,7 @@ p {
     margin-left: 10px;
     padding-right: 10px;
     padding-left: 10px;
-    font-size: 20px;
+    font-size: 15px;
     display: flex;
 }
 
@@ -115,7 +115,7 @@ h6 {
     align-content: center;
 }
 
-.view {
+.card-view {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -147,9 +147,6 @@ h6 {
     flex-shrink: inherit;
 }
 
-.cards {
-    padding: 10px;
-}
 
 .card-front .card-back {
     background-color: var(--highlight-color);
@@ -160,14 +157,14 @@ h6 {
 }
 
 /*
-.cards .game-card .view {
+.cards .game-card .card-view {
     display: flex;
     justify-content: center;
     border-color: #DAF033;
     align-items: center;
 }
 
-.game-card .view {
+.game-card .card-view {
     width: 100%;
     height: 100%;
     border-radius: 10px;
