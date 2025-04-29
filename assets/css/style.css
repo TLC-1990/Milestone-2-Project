@@ -149,6 +149,7 @@ h6 {
     transform: rotateY(180deg);
 }
 
+
 .cards .game-card {
     cursor: pointer;
     user-select: none;
