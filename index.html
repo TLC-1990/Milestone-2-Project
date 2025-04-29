@@ -47,16 +47,22 @@
   </header>
   <main class="container-fluid">
     <h1 class="display-3"> Prehistoric Puzzler</h1>
-    <h2> Test your memory and learn about Earth's extinct monster megafauna!</h2>
-    <h3> Instructions </h3>
-    <p class="container-fluid">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, provident. Consequuntur unde reprehenderit,
-      laudantium repudiandae, odit quisquam voluptates officia veritatis tenetur iusto atque sapiente nostrum id
-      soluta
-      omnis expedita in.
-    </p>
+    <div class="intro-section-container">
+      <h2> Test your memory and learn about Earth's extinct monster megafauna!</h2>
+      <h3> Instructions </h3>
+      <p class="container-fluid">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, provident. Consequuntur unde reprehenderit,
+        laudantium repudiandae, odit quisquam voluptates officia veritatis tenetur iusto atque sapiente nostrum id
+        soluta
+        omnis expedita in.
+      </p>
+    </div>
     <!--Gameboard with cards-->
     <section id="gameboard" class="container-fluid">
+      <p><span class="score">Score:</span></p>
+      <div class="actions">
+        <button onclick="restart()">Restart</button>
+      </div>
       <div class="container game-section-container">
         <div class="cards" id="cards">
           <div class="row">
@@ -225,7 +231,6 @@
   </script>
   <!-- Font Awesome kit -->
   <script src="https://kit.fontawesome.com/aa9af45995.js" crossorigin="anonymous"></script>
-  <script src="assets/js/script.js"></script>
 
   <!-- JavaScript code to ensure the Bootstrap mobile navbar collapses when navigating to in-page links -->
   <script>
@@ -248,6 +253,8 @@
         });
       });
   </script>
+  <!--JavaScript script link-->
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>
