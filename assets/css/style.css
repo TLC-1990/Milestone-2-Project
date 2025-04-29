@@ -106,13 +106,15 @@ h6 {
     font-size: 2em;
 }
 
-.game-container {
+.game-section-container {
     display: grid;
     grid-template-columns: 1fr, 1fr, 1fr, 1fr;
     row-gap: 10px;
     grid-gap: 20px;
     justify-content: center;
     align-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 .card-view {
@@ -206,6 +208,7 @@ h6 {
     background-color: var(--highlight-color);
     border-color: #DAF033;
     box-shadow: 10px 5px 5px var(--secondary-color);
+    width: 100%;
 }
 
 /*Navbar styling*/
