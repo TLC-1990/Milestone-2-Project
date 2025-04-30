@@ -8,13 +8,78 @@ console.log(startScreenContainer)
 
 const gameSectionContainer = document.querySelector(".game-section-container")
 console.log(gameSectionContainer)
-let cards = []
+
+const cards = [{
+        name: 'Irish Elk',
+        image: 'assets/images/irish-elk.webp',
+        altAttribute: 'An image of an Irish elk on a sand-coloured background with a name label below'
+    },
+    {
+        name: 'Glyptodon',
+        image: 'assets/images/glyptodon.webp',
+        altAttribute: 'An image of a glyptodon on a sand-coloured background with a name label below'
+    },
+    {
+        name: 'Woolly Mammoth',
+        image: 'assets/images/woolly-mammoth.webp',
+        altAttribute: 'An image of a woolly mammoth on a sand-coloured background with a name label below'
+    },
+    {
+        name: 'Megatherium',
+        image: 'assets/images/megatherium.webp',
+        altAttribute: 'An image of a megatherium on a sand-coloured background with a name label below'
+    },
+    {
+        name: 'Short-Faced Bear',
+        image: 'assets/images/short-faced-bear.webp',
+        altAttribute: 'An image of a short-faced bear on a sand-coloured background with a name label below'
+    },
+    {
+        name: 'Smilodon',
+        image: 'assets/images/smilodon.webp',
+        altAttribute: 'An image of a smilodon on a sand-coloured background with a name label below'
+    },
+    {
+        name: 'Titanis',
+        image: 'assets/images/titanis.webp',
+        altAttribute: 'An image of a titanis bird on a sand-coloured background with a name label below'
+    },
+    {
+        name: 'Steppe Bison',
+        image: 'assets/images/steppe-bison.webp',
+        altAttribute: 'An image of a steppe bison on a sand-coloured background with a name label below'
+    },
+];
+
+console.log(cards)
+
+const duplicateCards = [];
+for (let i = 0; i < arr.length; i++) {
+    duplicateCards.push(cards[i]);
+}
+console.log(duplicateCards)
+
+const currentCards = cards.concat(duplicateCards); {
+    currentCards = []
+};
+console.log(currentCards)
+
+
+const shuffleCards = currentCards => {
+    for (let i = currentCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = currentCards[i];
+        currentCards[i] = currentCards[j];
+        currentCards[j] = temp;
+    }
+}
+
+
+// Used like so
+let arr = [2, 11, 37, 42];
+shuffle(arr);
+console.log(arr);
 
 let firstCard, secondCard;
 let lockboard = false;
 let score = 0;
-
-const cards = {
-
-}
-let
