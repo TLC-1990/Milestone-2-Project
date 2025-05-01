@@ -68,7 +68,7 @@ h6 {
 }
 
 /*Start screen*/
-#startScreen {
+#start-screen-container {
     margin: auto;
     margin-top: 50px;
     position: relative;

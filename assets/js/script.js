@@ -1,4 +1,4 @@
-const introSectionContainer = document.getElementById("intro-section")
+const introSectionContainer = document.getElementById("intro-section-container")
 console.log(introSectionContainer)
 
 
@@ -54,7 +54,7 @@ const cards = [{
 console.log(cards)
 
 const duplicateCards = [];
-for (let i = 0; i < arr.length; i++) {
+for (let i = 0; i < cards.length; i++) {
     duplicateCards.push(cards[i]);
 }
 console.log(duplicateCards)
@@ -73,12 +73,8 @@ const shuffleCards = currentCards => {
         currentCards[j] = temp;
     }
 }
+console.log(shuffleCards)
 
-
-// Used like so
-let arr = [2, 11, 37, 42];
-shuffle(arr);
-console.log(arr);
 
 let firstCard, secondCard;
 let lockboard = false;
