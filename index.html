@@ -64,13 +64,14 @@
         <h1>Prehistoric Puzzler</h1>
       </div>
       <div>
-        <button id="start-game-button" class="btn btn-success" onclick="startGame()">Click here to
-          begin!</button>
+        <button id="start-game-button" class="btn btn-success"
+          onclick="document.getElementById(gameboard).style.display='block'; alert('Do you want to start the game?'); document.getElementById(start-screen-container).style.display='none'">Click
+          here to begin!</button>
       </div>
       <br>
     </section>
     <!--Gameboard with cards-->
-    <section id="gameboard" class="container-fluid">
+    <section id="gameboard" class="container-fluid" style="display: none;">
       <p><span class="score">Score:</span></p>
       <div class="actions">
         <button onclick="restart()">Restart</button>

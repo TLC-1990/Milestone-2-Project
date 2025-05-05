@@ -25,12 +25,14 @@ function startGame() {
     }
     confirm('Are you sure you want to start the game?');
 }
-document.getElementById('start-game-button').addEventListener('click', startGame)
+
+startGameButton.addEventListener('click', startGame)
 
 
 /*Game functionality*/
 
-let firstCard, secondCard;
+let firstCard = false;
+let secondCard = false;
 let lockboard = false;
 let score = 0;
 
@@ -129,10 +131,6 @@ function flipCard() {
 
 
 function restart() {
-    resetBoard();
-    shuffleCards();
-    score = 0;
-    document.querySelector(".score").textContent = score;
-    gridContainer.innerHTML = "";
-    generateCards();
+
+    confirm('Do you want another go?')
 }
