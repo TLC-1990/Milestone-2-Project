@@ -20,8 +20,9 @@ console.log(startGameButton)
 function startGame() {
     if (wholeGameboardArea.style.display == "none") {
         wholeGameboardArea.style.display = "block";
+        startScreenContainer.style.display = "none";
     } else {
-        wholeGameboardArea.style.display = "none";
+        wholeGameboardArea.style.display = "block";
     }
     confirm('Are you sure you want to start the game?');
 }
@@ -87,12 +88,17 @@ for (let i = 0; i < cards.length; i++) {
 }
 console.log(duplicateCards)
 
-const currentCards = cards.concat(duplicateCards);
+const currentCards = [cards.concat(duplicateCards)];
 console.log(currentCards)
 
-currentCards = []
+/*Flip cards*/
+const card = document.querySelector(".game-card");
 
+card.addEventListener("click", function (e) {
+    card.classList.toggle('is-flipped');
+});
 
+/*shuffle cards*/
 const shuffleCards = currentCards => {
     for (let i = currentCards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -110,7 +116,7 @@ function generateCards() {
     }
 }
 
-function flipCard() {
+/*function flipCard() {
     if (lockBoard) return;
     if (this === firstCard) return;
 
@@ -127,10 +133,25 @@ function flipCard() {
     lockBoard = true;
 
     checkForMatch();
+}*/
+
+function flipCard({
+    target: clickedCard
+}) {
+    if (cardOne !== clickedCard && !disableDeck) {
+        clickedCard.classList.add("flip");
+        if (!cardOne) {
+            return cardOne = clickedCard;
+        }
+        cardTwo = clickedCard;
+        disableDeck = true;
+        let cardOneImg = cardOne.querySelector(".card-back card-view").src,
+            cardTwoImg = cardTwo.querySelector(".card-back card-view").src;
+        matchCards(cardOneImg, cardTwoImg);
+    }
 }
 
-
+/*game restart button*/
 function restart() {
-
     confirm('Do you want another go?')
 }

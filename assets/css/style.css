@@ -21,10 +21,9 @@
 
 body {
     font-family: var(--secondary-font);
-    /*color: var(--highlight-color);
-    background-color: var(--primary-color);*/
-    /*color:black;*/
-    background-color: red;
+    color: var(--highlight-color);
+    background-color: var(--primary-color);
+    color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,7 +128,10 @@ h6 {
     border-style: solid;
     flex-direction: row;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     background-color: var(--highlight-color);
+    cursor: pointer;
+    perspective: 1000px;
 }
 
 .game-card {
@@ -138,7 +140,12 @@ h6 {
     margin: 5px;
     position: relative;
     transform-style: preserve-3d;
-    transition: all 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.game-card .is-flipped {
+    transform: rotateY(180deg);
 }
 
 .game-card .card-front img {
@@ -181,7 +188,7 @@ h6 {
 
 /*Navbar styling*/
 #navbar {
-    background-color: blue;
+    background-color: var(--primary-color);
     color: greenyellow;
     font-family: (--secondary-font);
     font-size: 30px;
