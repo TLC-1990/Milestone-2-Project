@@ -47,16 +47,6 @@
   </header>
   <main class="container-fluid">
     <h1 class="display-3"> Prehistoric Puzzler</h1>
-    <!--Pre-game confirmation screen-->
-    <section id="start-screen-container">
-      <div>
-        <h1>Prehistoric Puzzler</h1>
-      </div>
-      <div>
-        <button id="start-button" class="btn btn-success">Click here to begin!</button>
-      </div>
-      <br>
-    </section>
     <!--Gameboard-->
     <div class="intro-section-container">
       <h2> Test your memory and learn about Earth's extinct monster megafauna!</h2>
@@ -68,6 +58,17 @@
         omnis expedita in.
       </p>
     </div>
+    <!--Pre-game confirmation screen-->
+    <section id="start-screen-container">
+      <div>
+        <h1>Prehistoric Puzzler</h1>
+      </div>
+      <div>
+        <button id="start-game-button" class="btn btn-success" onclick="startGame()">Click here to
+          begin!</button>
+      </div>
+      <br>
+    </section>
     <!--Gameboard with cards-->
     <section id="gameboard" class="container-fluid">
       <p><span class="score">Score:</span></p>

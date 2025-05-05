@@ -6,8 +6,34 @@ const startScreenContainer = document.getElementById("start-screen-container")
 console.log(startScreenContainer)
 
 
-const gameSectionContainer = document.querySelector(".game-section-container")
+const gameSectionContainer = document.querySelector("game-section-container")
 console.log(gameSectionContainer)
+
+const wholeGameboardArea = document.getElementById("gameboard")
+console.log(wholeGameboardArea)
+
+/*Start splash screen*/
+
+const startGameButton = document.getElementById('start-game-button');
+console.log(startGameButton)
+
+function startGame() {
+    if (wholeGameboardArea.style.display == "none") {
+        wholeGameboardArea.style.display = "block";
+    } else {
+        wholeGameboardArea.style.display = "none";
+    }
+    confirm('Are you sure you want to start the game?');
+}
+document.getElementById('start-game-button').addEventListener('click', startGame)
+
+
+/*Game functionality*/
+
+let firstCard, secondCard;
+let lockboard = false;
+let score = 0;
+
 
 const cards = [{
         name: 'Irish Elk',
@@ -59,10 +85,10 @@ for (let i = 0; i < cards.length; i++) {
 }
 console.log(duplicateCards)
 
-const currentCards = cards.concat(duplicateCards); {
-    currentCards = []
-};
+const currentCards = cards.concat(duplicateCards);
 console.log(currentCards)
+
+currentCards = []
 
 
 const shuffleCards = currentCards => {
@@ -75,7 +101,38 @@ const shuffleCards = currentCards => {
 }
 console.log(shuffleCards)
 
+function generateCards() {
+    for (let card of currentCards) {
+        gridContainer.appendChild(cardElement);
+        cardElement.addEventListener("click", flipCard);
+    }
+}
 
-let firstCard, secondCard;
-let lockboard = false;
-let score = 0;
+function flipCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
+
+    this.classList.add("flipped");
+
+    if (!firstCard) {
+        firstCard = this;
+        return;
+    }
+
+    secondCard = this;
+    score++;
+    document.querySelector(".score").textContent = score;
+    lockBoard = true;
+
+    checkForMatch();
+}
+
+
+function restart() {
+    resetBoard();
+    shuffleCards();
+    score = 0;
+    document.querySelector(".score").textContent = score;
+    gridContainer.innerHTML = "";
+    generateCards();
+}
