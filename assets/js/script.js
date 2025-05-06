@@ -83,18 +83,16 @@ const cards = [{
 console.log(cards)
 
 /*duplicate cards*/
-const duplicateCards = [];
-for (let i = 0; i < cards.length; i++) {
-    duplicateCards.push(cards[i]);
-}
-console.log(duplicateCards)
 
-const currentCards = [cards.concat(duplicateCards)];
-console.log(currentCards)
+const currentCards = [...cards, ...cards];
+// shuffle
+currentCards.sort(() => Math.random())
 
 /*Flip cards*/
-
 const card = document.querySelectorAll(".game-card");
+
+
+card.forEach((card) => card.addEventListener("click", flipCard));
 
 function flipCard() {
     for (let i = 0; i < card.length; i++) {
@@ -103,7 +101,6 @@ function flipCard() {
     this.classList.toggle('is-flipped');
 };
 
-card.forEach((card) => card.addEventListener("click", flipCard));
 
 /*shuffle cards*/
 function shuffleCards(currentCards) {
@@ -127,11 +124,6 @@ function generateCards() {
 
 /*countdown timer*/
 
-const beginCountdown = document.getElementById('begin-countdown-button')
-console.log(beginCountdown)
-
-beginCountdown.addEventListener('click', countdown)
-
 function countdown(minutes, seconds) {
     function tick() {
         const countdownTimer = document.getElementById("game-timer");
@@ -145,23 +137,23 @@ function countdown(minutes, seconds) {
                 setTimeout(function () {
                     countdown(minutes - 1, 59);
                 }, 1000);
-            }
-            if (secs < 0) {
-                document.getElementById('cards').onclick = null;
-                clearTimeout(timer);
-                alert("Game OVER!");
+                if (secs !== -1) {
+                    setTimeout(Decrement, 1000);
+                } else {
+                    alert('Game OVER! Would you like to start again?');
+                }
             };
         }
     }
     tick();
 }
 
-countdown(2, 0o0);
-
+countdown(2, 0);
 
 /*game restart button*/
 function restart() {
-    shuffleCards()
-    confirm('Do you want another go?');
-    countdown();
+    shuffleCards(currentCards);
+    alert('Do you want another go?');
+    clearTimeout(setTimeout);
+    countdown(2, 0);
 }

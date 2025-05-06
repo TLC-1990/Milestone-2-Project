@@ -59,8 +59,7 @@
         <h1 id="start-screen-title">Prehistoric Puzzler</h1>
       </div>
       <div>
-        <button id="start-game-button" class="btn btn-success"
-          onclick="document.getElementById(gameboard).style.display='block';">Click
+        <button id="start-game-button" class="btn btn-success" onclick="startGame()">Click
           here to begin!</button>
       </div>
       <br>
@@ -68,7 +67,7 @@
     <!--Gameboard with cards-->
     <section id="gameboard" class="container-fluid" style="display: none;">
       <div class="actions">
-        <button id="begin-countdown-button" onclick="beginCountdown()">Begin!</button>
+        <button id="begin-countdown-button">Begin!</button>
         <div timer id="game-timer" class="game-timer"></div>
         <button onclick="restart()">Restart</button>
       </div>
