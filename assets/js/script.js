@@ -82,6 +82,7 @@ const cards = [{
 
 console.log(cards)
 
+/*duplicate cards*/
 const duplicateCards = [];
 for (let i = 0; i < cards.length; i++) {
     duplicateCards.push(cards[i]);
@@ -99,7 +100,7 @@ card.addEventListener("click", function (e) {
 });
 
 /*shuffle cards*/
-const shuffleCards = currentCards => {
+function shuffleCards(currentCards) {
     for (let i = currentCards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         const temp = currentCards[i];
@@ -107,7 +108,8 @@ const shuffleCards = currentCards => {
         currentCards[j] = temp;
     }
 }
-console.log(shuffleCards)
+
+console.log(shuffleCards(currentCards))
 
 function generateCards() {
     for (let card of currentCards) {
@@ -135,7 +137,7 @@ function generateCards() {
     checkForMatch();
 }*/
 
-function flipCard({
+/*function flipCard({
     target: clickedCard
 }) {
     if (cardOne !== clickedCard && !disableDeck) {
@@ -149,9 +151,38 @@ function flipCard({
             cardTwoImg = cardTwo.querySelector(".card-back card-view").src;
         matchCards(cardOneImg, cardTwoImg);
     }
+}*/
+
+/*countdown timer*/
+function countdown(minutes, seconds) {
+    function tick() {
+        const countdownTimer = document.getElementById("game-timer");
+        countdownTimer.innerHTML =
+            minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+        seconds--;
+        if (seconds >= 0) {
+            timeoutHandle = setTimeout(tick, 1000);
+        } else {
+            if (minutes >= 1) {
+                setTimeout(function () {
+                    countdown(minutes - 1, 59);
+                }, 1000);
+            }
+            if (secs < 0) {
+                document.getElementById('cards').onclick = null;
+                clearTimeout(timer);
+                alert("Game OVER!");
+            };
+        }
+    }
+    tick();
 }
+
+countdown(2, 0o0);
+
 
 /*game restart button*/
 function restart() {
-    confirm('Do you want another go?')
+    shuffleCards()
+    confirm('Do you want another go?');
 }

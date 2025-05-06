@@ -34,14 +34,14 @@ body {
 
 p {
     font-family: var(--primary-font);
-    color: black;
+    color: var(--highlight-color);
     width: 100%;
     text-align: start;
     margin-right: 10px;
     margin-left: 10px;
     padding-right: 10px;
     padding-left: 10px;
-    font-size: 15px;
+    font-size: 2em;
     display: flex;
 }
 
@@ -52,7 +52,7 @@ h1 {
 h1,
 h2,
 h3 {
-    color: darkgreen;
+    color: var(--highlight-color-headers);
     text-align: center;
 }
 
@@ -87,19 +87,18 @@ h6 {
 
 /* Game */
 
-/*#countdown {
+.game-timer {
     font-family: var(--secondary-font);
     color: var(--primary-color);
     text-align: center;
-    margin-top: 20px;
+    margin: 10px;
     border: var(--secondary-color);
     background-color: var(--highlight-color-headers);
-    max-width: 300px;
-    border-radius: 10px;
-    align-items: start;
     padding: 10px;
     border: solid var(--secondary-color);
-}*/
+    display: flex;
+    justify-content: center;
+}
 
 .actions {
     display: flex;

@@ -52,10 +52,8 @@
       <h2> Test your memory and learn about Earth's extinct monster megafauna!</h2>
       <h3> Instructions </h3>
       <p class="container-fluid">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, provident. Consequuntur unde reprehenderit,
-        laudantium repudiandae, odit quisquam voluptates officia veritatis tenetur iusto atque sapiente nostrum id
-        soluta
-        omnis expedita in.
+        Test your memory skills by flipping the cards to reveal the prehstoric monsters. Match the pairs before the
+        timer runs out!
       </p>
     </div>
     <!--Pre-game confirmation screen-->
@@ -65,7 +63,7 @@
       </div>
       <div>
         <button id="start-game-button" class="btn btn-success"
-          onclick="document.getElementById(gameboard).style.display='block'; alert('Do you want to start the game?')">Click
+          onclick="document.getElementById(gameboard).style.display='block';">Click
           here to begin!</button>
       </div>
       <br>
@@ -73,6 +71,7 @@
     <!--Gameboard with cards-->
     <section id="gameboard" class="container-fluid" style="display: none;">
       <p><span class="score">Score:</span></p>
+      <div timer id="game-timer" class="game-timer"></div>
       <div class="actions">
         <button onclick="restart()">Restart</button>
       </div>
