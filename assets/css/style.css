@@ -83,13 +83,16 @@ h6 {
     box-shadow: 0 1px 32px var(--highlight-color-headers);
 }
 
+#start-screen-title {
+    color: var(--primary-color)
+}
 
 
 /* Game */
 
 .game-timer {
     font-family: var(--secondary-font);
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-align: center;
     margin: 10px;
     border: var(--secondary-color);
@@ -98,6 +101,7 @@ h6 {
     border: solid var(--secondary-color);
     display: flex;
     justify-content: center;
+    max-width: 90px;
 }
 
 .actions {
@@ -143,7 +147,7 @@ h6 {
     cursor: pointer;
 }
 
-.game-card .is-flipped {
+.game-card.is-flipped {
     transform: rotateY(180deg);
 }
 

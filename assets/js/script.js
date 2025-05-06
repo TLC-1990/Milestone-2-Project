@@ -93,11 +93,17 @@ const currentCards = [cards.concat(duplicateCards)];
 console.log(currentCards)
 
 /*Flip cards*/
-const card = document.querySelector(".game-card");
 
-card.addEventListener("click", function (e) {
-    card.classList.toggle('is-flipped');
-});
+const card = document.querySelectorAll(".game-card");
+
+function flipCard() {
+    for (let i = 0; i < card.length; i++) {
+        if (card[i].classList.contains('is-flipped')) card[i].classList.remove('is-flipped')
+    }
+    this.classList.toggle('is-flipped');
+};
+
+card.forEach((card) => card.addEventListener("click", flipCard));
 
 /*shuffle cards*/
 function shuffleCards(currentCards) {
@@ -118,42 +124,14 @@ function generateCards() {
     }
 }
 
-/*function flipCard() {
-    if (lockBoard) return;
-    if (this === firstCard) return;
-
-    this.classList.add("flipped");
-
-    if (!firstCard) {
-        firstCard = this;
-        return;
-    }
-
-    secondCard = this;
-    score++;
-    document.querySelector(".score").textContent = score;
-    lockBoard = true;
-
-    checkForMatch();
-}*/
-
-/*function flipCard({
-    target: clickedCard
-}) {
-    if (cardOne !== clickedCard && !disableDeck) {
-        clickedCard.classList.add("flip");
-        if (!cardOne) {
-            return cardOne = clickedCard;
-        }
-        cardTwo = clickedCard;
-        disableDeck = true;
-        let cardOneImg = cardOne.querySelector(".card-back card-view").src,
-            cardTwoImg = cardTwo.querySelector(".card-back card-view").src;
-        matchCards(cardOneImg, cardTwoImg);
-    }
-}*/
 
 /*countdown timer*/
+
+const beginCountdown = document.getElementById('begin-countdown-button')
+console.log(beginCountdown)
+
+beginCountdown.addEventListener('click', countdown)
+
 function countdown(minutes, seconds) {
     function tick() {
         const countdownTimer = document.getElementById("game-timer");
@@ -185,4 +163,5 @@ countdown(2, 0o0);
 function restart() {
     shuffleCards()
     confirm('Do you want another go?');
+    countdown();
 }
