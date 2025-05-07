@@ -6,7 +6,7 @@ const startScreenContainer = document.getElementById("start-screen-container")
 console.log(startScreenContainer)
 
 
-const gameSectionContainer = document.querySelector("game-section-container")
+const gameSectionContainer = document.getElementById("game-section-container")
 console.log(gameSectionContainer)
 
 const wholeGameboardArea = document.getElementById("gameboard")
@@ -20,14 +20,15 @@ console.log(startGameButton)
 function startGame() {
     if (wholeGameboardArea.style.display == "none") {
         wholeGameboardArea.style.display = "block";
-        startScreenContainer.style.display = "none";
+        startScreenContainer.style.display = "block";
     } else {
         wholeGameboardArea.style.display = "block";
     }
-    confirm('Are you sure you want to start the game?');
 }
+console.log(startGame())
+startGameButton.addEventListener('click', startGame())
 
-startGameButton.addEventListener('click', startGame)
+
 
 
 /*Game functionality*/
@@ -82,91 +83,70 @@ const cards = [{
 
 console.log(cards)
 
-/*duplicate cards*/
+let flippedCards = [];
+let matchedPairs = 0;
+const totalPairs = document.querySelectorAll('.game-card').length / 2;
+console.log(totalPairs)
 
-const currentCards = [...cards, ...cards];
-// shuffle
-currentCards.sort(() => Math.random())
+/* Shuffle function using Fisher-Yates */
+function shuffleCards() {
+    const board = document.getElementById('game-board');
+    const cards = [...board.children]
 
-/*Flip cards*/
-const card = document.querySelectorAll(".game-card");
-
-
-card.forEach((card) => card.addEventListener("click", flipCard));
-
-function flipCard() {
-    for (let i = 0; i < card.length; i++) {
-        if (card[i].classList.contains('is-flipped')) card[i].classList.remove('is-flipped')
-    }
-    this.classList.toggle('is-flipped');
-};
-
-
-/*shuffle cards*/
-function shuffleCards(currentCards) {
-    for (let i = currentCards.length - 1; i > 0; i--) {
+    for (let i = cards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        const temp = currentCards[i];
-        currentCards[i] = currentCards[j];
-        currentCards[j] = temp;
+        board.appendChild(cards[j]); // Rearrange DOM
+        [cards[i], cards[j]] = [cards[j], cards[i]];
     }
 }
 
-console.log(shuffleCards(currentCards))
-
-function generateCards() {
-    for (let card of currentCards) {
-        gridContainer.appendChild(cardElement);
-        cardElement.addEventListener("click", flipCard);
+function checkForWin() {
+    if (matchedPairs === totalPairs) {
+        setTimeout(() => {
+            alert('🎉 You matched all the cards! Want to play again?');
+        }, 500);
     }
 }
 
+function flipCard(event) {
+    const clickedCard = event.currentTarget;
 
-/*countdown timer*/
-let start = document.querySelector('#startTimer');
-let restart = document.querySelector('#restartTimer');
+    if (
+        clickedCard.classList.contains('is-flipped') ||
+        flippedCards.length === 2
+    ) {
+        return;
+    }
 
-let timerId; // makes the variable global
-startTimer.addEventListener('click', function () {
-    timerId = setInterval(function () {
-        console.log('!')
-    }, 1000);
-});
+    clickedCard.classList.add('is-flipped');
+    flippedCards.push(clickedCard);
 
-restartTimer.addEventListener('click', function () {
-    clearInterval(timerId);
-});
+    if (flippedCards.length === 2) {
+        const [card1, card2] = flippedCards;
+        const isMatch = card1.dataset.card === card2.dataset.card;
 
-
-function countdown(minutes, seconds) {
-    function tick() {
-        const countdownTimer = document.getElementById("game-timer");
-        countdownTimer.innerHTML =
-            minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-        seconds--;
-        if (seconds >= 0) {
-            timeoutHandle = setTimeout(tick, 1000);
+        if (isMatch) {
+            matchedPairs++;
+            flippedCards = [];
+            checkForWin();
         } else {
-            if (minutes >= 1) {
-                setTimeout(function () {
-                    countdown(minutes - 1, 59);
-                }, 1000);
-                if (seconds !== -1) {
-                    setTimeout(Decrement, 1000);
-                } else {
-                    alert('Game OVER! Would you like to start again?');
-                }
-            };
+            setTimeout(() => {
+                card1.classList.remove('is-flipped');
+                card2.classList.remove('is-flipped');
+                flippedCards = [];
+            }, 1000);
         }
     }
-    tick();
 }
 
-countdown(2, 0);
+/*Initiate game*/
+function initGame() {
+    const cards = document.querySelectorAll('.game-card');
+    cards.forEach(card => {
+        card.addEventListener('click', flipCard);
+    });
 
-/*game restart button*/
-function restartTimer() {
-    shuffleCards(currentCards);
-    alert('Do you want another go?');
-    clearInterval(timerId);
+    shuffleCards();
 }
+/*Initiate game automatically*/
+initGame();

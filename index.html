@@ -45,7 +45,7 @@
   <main class="container-fluid">
     <h1 class="display-3"> Prehistoric Puzzler</h1>
     <!--Gameboard-->
-    <div class="intro-section-container">
+    <div id="intro-section-container">
       <h2> Test your memory and learn about Earth's extinct monster megafauna!</h2>
       <h3> Instructions </h3>
       <p class="container-fluid">
@@ -59,168 +59,163 @@
         <h1 id="start-screen-title">Prehistoric Puzzler</h1>
       </div>
       <div>
-        <button id="start-game-button" class="btn btn-success" onclick="startGame()">Click
+        <button id="start-game-button" class="btn btn-success">Click
           here to begin!</button>
       </div>
       <br>
     </section>
     <!--Gameboard with cards-->
-    <section id="gameboard" class="container-fluid" style="display: none;">
-      <div class="actions">
-        <button onclick=startTimer() id="begin-countdown-button">Begin!</button>
-        <div timer id="game-timer" class="game-timer"></div>
-        <button onclick="restartTimer()">Restart</button>
-      </div>
+    <section id="gameboard" class="container-fluid">
       <div class="container game-section-container">
         <div class="cards" id="cards">
           <div class="row">
-            <div class="game-card">
+            <div class="game-card" data-card="glyptodon">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/glyptodon.webp" alt="An image of a glyptodon">
               </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-card="irish-elk">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/irish-elk.webp" alt="An image of an Irish Elk">
               </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-card="megatherium">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/megatherium.webp" alt="An image of a megatherium">
               </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-card="short-faced-bear">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/short-faced-bear.webp" alt="An image of a short-faced-bear">
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="game-card">
+            <div class="game-card" data-card="smilodon">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/smilodon.webp" alt="An image of a smilodon">
               </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-card="steppe-bison">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/steppe-bison.webp" alt="An image of a steppe bison">
               </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-card="titanis">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/titanis.webp" alt="An image of a titanis bird">
               </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-card="woolly-mammoth">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/woolly-mammoth.webp" alt="An image of a woolly mammoth">
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="game-card">
+            <div class="game-card" data-card="smilodon">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/smilodon.webp" alt="An image of a smilodon">
               </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-card="short-faced-bear">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/short-faced-bear.webp" alt="An image of a short-faced-bear">
               </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-card="megatherium">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/megatherium.webp" alt="An image of a megatherium">
               </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-card="irish-elk">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/irish-elk.webp" alt="An image of an Irish Elk">
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="game-card">
+            <div class="game-card" data-card="steppe-bison">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/steppe-bison.webp" alt="An image of a steppe bison">
               </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-card="titanis">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/titanis.webp" alt="An image of a titanis bird">
               </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-card="woolly-mammoth">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/woolly-mammoth.webp" alt="An image of a woolly mammoth">
               </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-card="glyptodon">
               <div class="card-view card-front">
                 <img class="img-fluid" src="assets/images/stone-question-mark.webp"
                   alt="A stone question mark on a background of ferns">
               </div>
-              <div class="card-view card-back hidden">
+              <div class="card-view card-back">
                 <img class="img-fluid" src="assets/images/glyptodon.webp" alt="An image of a glyptodon">
               </div>
             </div>
