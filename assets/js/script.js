@@ -95,47 +95,8 @@ function shuffleCards() {
 
     for (let i = cards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        board.appendChild(cards[j]); // Rearrange DOM
+        board.appendChild(cards[j]);
         [cards[i], cards[j]] = [cards[j], cards[i]];
-    }
-}
-
-function checkForWin() {
-    if (matchedPairs === totalPairs) {
-        setTimeout(() => {
-            alert('🎉 You matched all the cards! Want to play again?');
-        }, 500);
-    }
-}
-
-function flipCard(event) {
-    const clickedCard = event.currentTarget;
-
-    if (
-        clickedCard.classList.contains('is-flipped') ||
-        flippedCards.length === 2
-    ) {
-        return;
-    }
-
-    clickedCard.classList.add('is-flipped');
-    flippedCards.push(clickedCard);
-
-    if (flippedCards.length === 2) {
-        const [card1, card2] = flippedCards;
-        const isMatch = card1.dataset.card === card2.dataset.card;
-
-        if (isMatch) {
-            matchedPairs++;
-            flippedCards = [];
-            checkForWin();
-        } else {
-            setTimeout(() => {
-                card1.classList.remove('is-flipped');
-                card2.classList.remove('is-flipped');
-                flippedCards = [];
-            }, 1000);
-        }
     }
 }
 
@@ -148,5 +109,5 @@ function initGame() {
 
     shuffleCards();
 }
-/*Initiate game automatically*/
+/*Initiate game automatically when page laods*/
 initGame();
