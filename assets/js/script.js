@@ -123,6 +123,20 @@ function generateCards() {
 
 
 /*countdown timer*/
+let start = document.querySelector('#startTimer');
+let restart = document.querySelector('#restartTimer');
+
+let timerId; // makes the variable global
+startTimer.addEventListener('click', function () {
+    timerId = setInterval(function () {
+        console.log('!')
+    }, 1000);
+});
+
+restartTimer.addEventListener('click', function () {
+    clearInterval(timerId);
+});
+
 
 function countdown(minutes, seconds) {
     function tick() {
@@ -137,7 +151,7 @@ function countdown(minutes, seconds) {
                 setTimeout(function () {
                     countdown(minutes - 1, 59);
                 }, 1000);
-                if (secs !== -1) {
+                if (seconds !== -1) {
                     setTimeout(Decrement, 1000);
                 } else {
                     alert('Game OVER! Would you like to start again?');
@@ -151,9 +165,8 @@ function countdown(minutes, seconds) {
 countdown(2, 0);
 
 /*game restart button*/
-function restart() {
+function restartTimer() {
     shuffleCards(currentCards);
     alert('Do you want another go?');
-    clearTimeout(setTimeout);
-    countdown(2, 0);
+    clearInterval(timerId);
 }

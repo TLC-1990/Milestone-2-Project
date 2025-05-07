@@ -67,9 +67,9 @@
     <!--Gameboard with cards-->
     <section id="gameboard" class="container-fluid" style="display: none;">
       <div class="actions">
-        <button id="begin-countdown-button">Begin!</button>
+        <button onclick=startTimer() id="begin-countdown-button">Begin!</button>
         <div timer id="game-timer" class="game-timer"></div>
-        <button onclick="restart()">Restart</button>
+        <button onclick="restartTimer()">Restart</button>
       </div>
       <div class="container game-section-container">
         <div class="cards" id="cards">
