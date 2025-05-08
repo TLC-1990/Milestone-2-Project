@@ -108,7 +108,7 @@ function flipCard(event) {
 function checkForWin() {
     if (matchedPairs === totalPairs) {
         setTimeout(() => {
-            alert('Amazing! You matched all the cards! Click the Reset button to play again :)');
+            alert('Amazing! You matched all the cards! Click the Reset button below to play again 🦣');
         }, 500);
     }
 }
