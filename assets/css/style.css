@@ -209,12 +209,13 @@ h6 {
 }
 
 #reset-gameboard {
-    background-color: var(--highlight-color);
+    background-color: var(--highlight-color-headers);
     color: #333;
     font-family: var(--primary-font);
-    font-size: 1em;
-    text-align: center;
+    font-size: 0.75rem;
     border: 2px solid;
+    justify-content: center;
+    display: flex;
     align-items: center;
     max-width: 200px;
 }
