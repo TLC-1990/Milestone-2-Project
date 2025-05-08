@@ -79,9 +79,9 @@ The user will be able to use the game and recieve feedback once the game is comp
 
 ### Scope
 The project will consist of a single page, but the game will be preempted by a starting splash page. 
-1. Homepage - This will contain a title, user instructions and the interactive memory card game. The game will focus on matching pairs of images of extinct megafauna. 
+1. Homepage - Following a user's confirmation that they want to start playing the game, they will be taken to the main game page. This will contain a title, user instructions and the interactive memory card game. The game will focus on matching pairs of images of extinct megafauna. 
 ### Structure
-(See Wireframes section below)
+(See wireframes section below)
 
 ### Skeleton
 The user will navigate by clicking the home link in the navbar menu (visible in tablet view and on desktop, collapsed on mobile devices).
@@ -201,55 +201,58 @@ AI system consulted to assist with resetGame bug as cards were not returning to 
     <tr>
       <th scope="row">glyptodon.webp</th>
       <td>assets/images/glyptodon.webp</td>
-      <td></td>
+      <td>https://commons.wikimedia.org/
+https://upload.wikimedia.org/wikipedia/commons/8/8b/Glyptodon_des_cavernes.jpg?20080105201428</td>
       <td>index.html</td>
     </tr>
      <tr>
       <th scope="row">irish-elk.webp</th>
       <td>assets/images/irish-elk.webp</td>
-      <td></td>
+      <td>https://static.wikia.nocookie.net/novum-terram/images/7/79/Irish_elk_%28SciiFii%29.png/revision/latest?cb=20200613190945</td>
       <td>index.html</td>
     </tr>
     <tr>
       <th scope="row">megatherium.webp</th>
       <td>assets/images/megatherium.webp</td>
-      <td></td>
+      <td>https://www.nhm.ac.uk/content/dam/nhm-www/discover/what-was-megatherium/megatherium-full-width.jpg</td>
       <td>index.html</td>
     </tr>
      <tr>
       <th scope="row">short-faced-bear.webp</th>
       <td>assets/images/short-faced-bear.webp</td>
-      <td></td>
+      <td>https://static.wikia.nocookie.net/sciifii/images/d/dd/Short-faced_bear_%28SciiFii%29.png/revision/latest?cb=20210121201358</td>
       <td>index.html</td>
     </tr>
      <tr>
       <th scope="row">smilodon.webp</th>
       <td>assets/images/smilodon.webp</td>
-      <td></td>
+      <td>https://pixabay.com/illustrations/smilodon-saber-toothed-cat-extinct-7540040/
+https://pixabay.com/get/g982aa77da75e15aca5adcf8215c5dc0bf3a00a4c45c2f681da68f07f69f3517093e17d60b5d484524f2bd3e013270144b13f956e441d26536c1d3011e6ad72a85875cf7bbeecaf6ca4b876e02626f6e3_1280.png?attachment=</td>
       <td>index.html</td>
     </tr>
      <tr>
       <th scope="row">steppe-bison.webp</th>
       <td>assets/images/steppe-bison.webp</td>
-      <td></td>
+      <td>https://img.freepik.com/free-psd/majestic-european-bison-charging_191095-79184.jpg?t=st=1746747659~exp=1746751259~hmac=5f4bf4059462af3f0e40e32322aa9d241946e227475bd9a715b7418229b04ff6&w=1380</td>
       <td>index.html</td>
     </tr>
     <tr>
       <th scope="row">titanis.webp</th>
       <td>assets/images/titanis.webp</td>
-      <td></td>
+      <td>https://64.media.tumblr.com/8d91c3bbaf5c8392718a4f4278218b96/aa505d15e123d588-0d/s1280x1920/1942164659a6d62ce04cffba1496705cd0a52fe5.png</td>
       <td>index.html</td>
     </tr>
     <tr>
       <th scope="row">woolly-mammoth.webp</th>
       <td>assets/images/woolly-mammoth.webp</td>
-      <td></td>
+      <td>https://pixabay.com/illustrations/woolly-mammoth-mammoth-nature-9271976/
+https://pixabay.com/get/g199a2d5535bdd0c66f994830e4545c6ecc3a73c07084c882ed3b2123c3e63a1137062518dc6499e175ba4daf21d83073a9cb967ace9cc718e0d4601e29a473968f46c9d5e3c067cfb03c5c683cdb8c54_1280.png?attachment=</td>
       <td>index.html</td>
     </tr>
     <tr>
       <th scope="row">ferns.webp</th>
       <td>assets/images/ferns.webp</td>
-      <td></td>
+      <td>https://images.pexels.com/photos/2757549/pexels-photo-2757549.jpeg?</td>
       <td>index.html</td>
     </tr>
   </tbody>
