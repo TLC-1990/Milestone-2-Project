@@ -220,10 +220,22 @@ h6 {
 
 
 /*Media Queries*/
+/*Small devices (phones, 576px and smaller) */
+@media screen and (max-width: 767px) {
+    .game-card .card-front img {
+        width: 55px;
+    }
+
+    .game-card {
+        height: 85px;
+        width: 55px;
+        margin: 5px;
+    }
+
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-
 
     .game-card .card-front img {
         width: 90px;
