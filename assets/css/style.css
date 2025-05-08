@@ -87,10 +87,13 @@ h6 {
     color: var(--primary-color)
 }
 
+.hidden {
+    display: none;
+}
 
 /* Game */
 
-.game-timer {
+/*.game-timer {
     font-family: var(--secondary-font);
     color: var(--secondary-color);
     text-align: center;
@@ -107,9 +110,9 @@ h6 {
 .actions {
     display: flex;
     justify-content: center;
-}
+}*/
 
-.game-section-container {
+#game-section-container {
     display: grid;
     grid-template-columns: 1fr, 1fr, 1fr, 1fr;
     grid-gap: 10px;
@@ -118,6 +121,7 @@ h6 {
     height: 100%;
     width: 100%;
 }
+
 
 .card-view {
     position: absolute;
@@ -187,6 +191,16 @@ h6 {
     box-shadow: 10px 5px 5px var(--secondary-color);
     width: 100%;
     height: 100%;
+}
+
+#reset-gameboard {
+    background-color: var(--highlight-color);
+    color: #333;
+    font-family: var(--primary-font);
+    font-size: 1em;
+    text-align: center;
+    border: 2px solid;
+    align-items: center;
 }
 
 /*Navbar styling*/

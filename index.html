@@ -49,8 +49,7 @@
       <h2> Test your memory and learn about Earth's extinct monster megafauna!</h2>
       <h3> Instructions </h3>
       <p class="container-fluid">
-        Test your memory skills by flipping the cards to reveal the prehstoric monsters. Match the pairs before the
-        timer runs out!
+        Test your memory skills by flipping the cards to reveal and match the pairs of prehstoric beasts!
       </p>
     </div>
     <!--Pre-game confirmation screen-->
@@ -59,13 +58,13 @@
         <h1 id="start-screen-title">Prehistoric Puzzler</h1>
       </div>
       <div>
-        <button id="start-game-button" class="btn btn-success">Click
-          here to begin!</button>
+        <button id="start-game-button" class="btn btn-success">
+          Click here to begin!</button>
       </div>
       <br>
     </section>
     <!--Gameboard with cards-->
-    <section id="gameboard" class="container-fluid">
+    <section id="gameboard" class="container-fluid hidden">
       <div class="container game-section-container" id="game-section-container">
         <div class="cards" id="cards">
           <div class="row">
@@ -221,6 +220,7 @@
             </div>
           </div>
         </div>
+        <button class="btn" id="reset-gameboard">Reset and play again!</button>
       </div>
     </section>
   </main>
@@ -234,28 +234,6 @@
   </script>
   <!-- Font Awesome kit -->
   <script src="https://kit.fontawesome.com/aa9af45995.js" crossorigin="anonymous"></script>
-
-  <!-- JavaScript code to ensure the Bootstrap mobile navbar collapses when navigating to in-page links -->
-  <script>
-    document
-      .querySelectorAll(".navbar-collapse .nav-link")
-      .forEach((link) => {
-        link.addEventListener("click", function (e) {
-          let section = document.querySelector(e.target.getAttribute("href"));
-          if (section) {
-            e.preventDefault(); // Prevent default anchor click behavior
-            let navbarHeight = document.querySelector(".navbar-toggler").offsetHeight;
-            window.scroll({
-              top: section.offsetTop - navbarHeight, // Adjust for navbar height
-              behavior: "smooth",
-            });
-            document
-              .querySelector(".navbar-collapse")
-              .classList.remove("show"); // Collapse navbar
-          }
-        });
-      });
-  </script>
   <!--JavaScript script link-->
   <script src="assets/js/script.js"></script>
 </body>
